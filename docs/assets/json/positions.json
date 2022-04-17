@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Portero",
+    "englishName": "Goalkeeper"
+  },
+  {
+    "id": 2,
+    "name": "Defensa Central",
+    "englishName": "Central Defender"
+  },
+  {
+    "id": 3,
+    "name": "Defensa Lateral",
+    "englishName": "Wing Back"
+  },
+  {
+    "id": 4,
+    "name": "Mediocampista Central",
+    "englishName": "Inner"
+  },
+  {
+    "id": 5,
+    "name": "Extremo",
+    "englishName": "Winger"
+  },
+  {
+    "id": 6,
+    "name": "Delantero",
+    "englishName": "Forward"
+  }
+]

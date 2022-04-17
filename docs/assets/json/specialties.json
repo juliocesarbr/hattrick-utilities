@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Cabeceador",
+    "englishName": "Header",
+    "symbol": "H"
+  },
+  {
+    "id": 2,
+    "name": "Técnico",
+    "englishName": "Technical",
+    "symbol": "T"
+  },
+  {
+    "id": 3,
+    "name": "Rápido",
+    "englishName": "Quick",
+    "symbol": "Q"
+  },
+  {
+    "id": 4,
+    "name": "Impredecible",
+    "englishName": "Unpredictable",
+    "symbol": "I"
+  },
+  {
+    "id": 5,
+    "name": "Potente",
+    "englishName": "Powerful",
+    "symbol": "P"
+  },
+  {
+    "id": 6,
+    "name": "Resistente",
+    "englishName": "Resilient",
+    "symbol": "R"
+  }
+]
