@@ -1,0 +1,140 @@
+<div class="hero-body">
+<div class="container">
+  <!--Form-->
+  <div class="column is-full mb-2">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!--Position - Select input-->
+      <div class="field">
+        <label class="label">Selecciona la posición de los jugadores</label>
+        <div class="select">
+          <select formControlName="position">
+            <option [value]="position.id" *ngFor="let position of positionsData">{{ position.name }}</option>
+          </select>
+          <div *ngIf="submitted && form.get('position')?.errors" class="small text-danger">
+            <div *ngIf="f['position'].errors && f['position'].errors['required']">
+              <p class="help is-danger">Este campo es obligatorio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Position - Select input-->
+      <!--File - File input-->
+      <div class="field mt-5">
+        <label class="label">Carga el archivo</label>
+        <div class="file has-name">
+          <label class="file-label">
+            <input class="file-input" type="file" formControlName="file" (change)="onFileSelected($event)">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fas fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Elegir archivo…
+              </span>
+            </span>
+            <span *ngIf="fileName" class="file-name">
+              {{ fileName }}
+            </span>
+          </label>
+        </div>
+        <div *ngIf="submitted && form.get('file')?.errors" class="small text-danger">
+          <div *ngIf="f['file'].errors && f['file'].errors['required']">
+            <p class="help is-danger">Este campo es obligatorio.</p>
+          </div>
+        </div>
+      </div>
+      <!--File - File input-->
+      <div class="control">
+        <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium">Procesar</button>
+      </div>
+    </form>
+  </div>
+  <!--Form-->
+  <!--Players Table-->
+  <div class="columns is-vcentered">
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Jugador</th>
+          <th>Especialidad</th>
+          <th>Asunto</th>
+          <th>Mensaje (Español)</th>
+          <th>Mensaje (Inglés)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let elem of players; let i = index">
+          <th>{{ i+1 }}</th>
+          <td>{{ elem[2] }} {{ elem[4] }} </td>
+          <td>{{ elem[25] }}</td>
+          <td>
+            <span>{{ elem[2] }} {{ elem[4] }} ({{ elem[1]}})</span>
+          </td>
+          <td>
+            <span class="ht-body">
+              Hola, ¿cómo estás?
+              <br>
+              <br>
+              Soy scout de la selección nacional U21 de Venezuela y te escribo por {{ elem[2] }} {{ elem[4] }} ({{ elem[1]}}) que es un jugador con el potencial para ser elegible en la posición de {{ selectedPositionName }}. Nos gustaría saber ¿cuál es el plan de entreno que tienes para él?.
+              <br>
+              <br>
+              El plan de entreno adecuado para su posición es el siguiente:
+              <b>(COLOCAR ACÁ EL PLAN DE ENTRENO)</b>
+              <br>
+              <br>
+              También es importante contar con lo siguiente para alcanzar un nivel óptimo de entreno:
+              <br>
+              <br>
+              <ul>
+                <li>-Entrenador de nivel Bueno(mínimo) o Excelente(ideal)</li>
+                <li>-2 Entrenadores asistentest nivel 5</li>
+                <li>-1 Doctor nivel 5</li>
+                <li>-Intensidad de entrenamiento 100%</li>
+                <li>-Resistencia/condición al 10% (Hasta que se notifique para subirla)</li>
+              </ul>
+              <br>
+              <br>
+              Espero tu respuesta pronto.
+              <br>
+              <br>
+              Recuerda registrarte en https://hattrickportal.pro/ para que podamos hacer un mejor seguimiento de tu jugador.
+            </span>
+          </td>
+          <td>
+            <span class="ht-body">
+              Hi, ¿how are you?
+              <br>
+              <br>
+              I'm U21 Venezuela national team scout and I write you for {{ elem[2] }} {{ elem[4] }} ({{ elem[1]}}) that is a player with potential to be elegible at {{ selectedPositionEnglishName }} position. We would like to know ¿Wich is your current training plan for him?.
+              <br>
+              <br>
+              The best training plan for his position is:
+              <b>(COLOCAR ACÁ EL PLAN DE ENTRENO)</b>
+              <br>
+              <br>
+              To reach the best efficiency on training is needed to adjust or have:
+              <br>
+              <br>
+              <ul>
+                <li>-Trainer with Good(minimun) or Excellent(ideal) level</li>
+                <li>-2 Assistant coach level 5</li>
+                <li>-1 Doctor nivel 5</li>
+                <li>-Training intensity 100%</li>
+                <li>-Resistence/condition to 10% (Until we ask you to increase it)</li>
+              </ul>
+              <br>
+              <br>
+              We wait for your answer soon.
+              <br>
+              <br>
+              And remember sign up at https://hattrickportal.pro/ that is a website where all the national teams can follow the growing of your players.
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!--Players Table-->
+</div>
+</div>
